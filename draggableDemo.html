@@ -1,0 +1,51 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#draggable').draggable({
+    cursor: "none",
+    revert: true
+  });
+   $('#div2').droppable({
+     drop:function(){
+         $("#message").html("You are definitely not a bot!")
+     }
+  });
+});
+</script>
+<style>
+#div1 {
+    height: 100px;
+    background-color: #0000ff;
+    padding: 5px;
+}
+#draggable {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: solid 1px black;
+}
+#div2 {
+    height: 100px;
+    background-color: #ff0000;
+    padding: 5px;
+}
+#message{
+	width:500px;
+	padding:20px;
+	margin:20px;
+}
+</style>
+</head>
+<body>
+<div id="message">
+Prove you are not a bot, by dragging the square from the blue area to the red area!
+</div>
+<div id="div1"><div id="draggable"></div></div>
+<div id="div2"></div>
+
+
+</body>
+</html>
